@@ -27,14 +27,14 @@ def get_img(src, img_size=False):
     return img
 
 
-def create_dataset(save_path, data_path, resize_img=True, shuffle_data=True):
+def create_dataset(save_path, data_path,shuffle_data , resize_img=True):
     hdf5_file = hdf.File(os.path.join(save_path, 'dataset.hdf5'))
 
     # read addresses a from the 'train' folder
     addrs = glob.glob(data_path)
 
     # to shuffle data
-    if shuffle_data:
+    if shuffle_data==1:
         c = list(addrs)
         shuffle(c)
         addrs = c
@@ -85,10 +85,12 @@ def show_images(path):
         if n == 5:  # break after 5 batches
             break
     hdf5_file.close()
+if __name__== "__main__":
+    parser = argparse.ArgumentParser()
 
-#
-# if __name__== "__main__":
-#     #create_dataset(save_path="C:/Users/Junaid/Desktop/first_github/data",data_path="C:/Users/Junaid/Desktop/first_github/*.jpg",resize_img=True,shuffle_data=True)
-#     print("df")
-#     show()
-#     #show_images('C:/Users/Junaid/Desktop/first_github/data/dataset.hdf5')
+    parser.add_argument("-save_path", "--save_path", dest="save_path", default="", help="")
+    parser.add_argument("-data_path", "--data_path", dest="data_path", help="data_path")
+    parser.add_argument("-shuffle_data", "--shuffle_data", dest="shuffle_data", help="shuffle_data")
+    args = parser.parse_args()
+    save_path, data_path, shuffle_data = args.save_path, args.data_path, args.shuffle_data
+    create_dataset(save_path,data_path,shuffle_data)

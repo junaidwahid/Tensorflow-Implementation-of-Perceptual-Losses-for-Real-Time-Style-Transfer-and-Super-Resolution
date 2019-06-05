@@ -27,6 +27,22 @@ After installing all these dependecies, then you need to download the pretrained
 
 <b>Usage</b><br>
 
+First of all you have to create a dataset file (hdf5 file).Since we have limited amount of ram so we have to read from secondary memory.
+But,reading from secondary memory is too much slow. So,to mitigate this problem i used HDF5.It provides much faster reading speed as also now we have single file instead of thousands of images.
+
+<b>Dataset Creation</b><br>
+Basic Usage:
+```
+python Dataset_creation.py -save_path <./dataset.hdf5> -data_path <./.*jpg> -shuffle_data <0 or 1>
+```
+Detail of parameters:
+```
+-save_path: The path where dataset file(HDF5 file) will be save.
+-data_path: The folder path which contains all the images for training.
+-shuffle_data: 0=No shuffling and 1=shuffle
+```
+
+
 <b>Training</b><br>
 Basic usage:
 ```python train.py -param <"init" or "restore"> -num_epoch <int> -model_path <./model.ckpt> -train_size <int> -batch_size <int> -style_img <./style_image.jpg>  -dataset_path <./dataset_git.hdf5> -squeezenet_path <./squeezenet.ckpt>```

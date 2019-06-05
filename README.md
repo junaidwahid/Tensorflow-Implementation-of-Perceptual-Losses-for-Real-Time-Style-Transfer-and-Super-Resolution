@@ -4,7 +4,7 @@ The way code is written is might looks like old tensorflow style but all things 
 
 This repository contains the implementation of  Justin Johnson's Paper "Perceptual Losses for Real-Time Style Transfer  and Super-Resolution" in Tensorflow
 
-The paper is using an algorithm which is taking content from content image and style from given style image and generates combination of both.Here is an example:
+The paper is using an algorithm which takes content from content image and style from given style image and generates combination of both.Here is an example:
 <img src="https://i.ibb.co/H2G17Mq/example.png" alt="example" border="0">
 
 <b>Setup</b><br>

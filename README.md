@@ -1,4 +1,4 @@
-# Tensorflow-Implementation-of-Perceptual-Losses-for-Real-Time-Style-Transfer-and-Super-Resolution
+# Tensorflow Implementation of Perceptual Losses for Real Time Style Transfer and Super Resolution
 Hi buddies. This is my first github repository. I coded this 2 years back, but due to time unavailability I could not able to upload it.
 The way code is written is might looks like old tensorflow style but all things are present in this repository.
 
